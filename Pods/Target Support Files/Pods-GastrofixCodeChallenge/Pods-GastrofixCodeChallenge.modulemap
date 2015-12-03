@@ -1,0 +1,6 @@
+framework module Pods_GastrofixCodeChallenge {
+  umbrella header "Pods-GastrofixCodeChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
