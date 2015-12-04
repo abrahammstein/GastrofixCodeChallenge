@@ -9,11 +9,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    var flickrPhotoInfo: FlickrPhoto!
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        title = flickrPhotoInfo.title
+        
+        webView.loadHTMLString("<div style=\"font-family: Helvetica; padding: 1em;\">" + flickrPhotoInfo.itemDescription! + "</div>", baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {

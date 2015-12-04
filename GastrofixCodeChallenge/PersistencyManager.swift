@@ -20,6 +20,15 @@ class PersistencyManager: NSObject {
         backgroundContext = appDelegate.backgroundContext!
         
         super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: nil, queue: nil) { note in
+            
+            if note != self.managedContext {
+                self.managedContext.performBlock({ () -> Void in
+                    self.managedContext.mergeChangesFromContextDidSaveNotification(note)
+                })
+            }
+        }
     }
     
     func saveFlickrPhoto(tags: String, authorId: String, author: String, published: NSDate, itemDescription: String, dateTaken: NSDate, media: String, link: String, title: String) {
@@ -42,5 +51,20 @@ class PersistencyManager: NSObject {
         } catch {
             fatalError("Failure to save context: \(error)")
         }
+    }
+    
+    func checkIfFlickrPhotoExists(media: String) -> Int {
+        let entity = NSEntityDescription.entityForName("FlickrPhoto", inManagedObjectContext: backgroundContext)
+        
+        let request = NSFetchRequest()
+        request.entity = entity
+        request.fetchLimit = 1
+        request.predicate = NSPredicate(format: "media == %@", media)
+        
+        return backgroundContext.countForFetchRequest(request, error: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

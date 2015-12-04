@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535D8B741C10BCA300CC117A /* 23477873225_c4ddf1eb7e_m.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 535D8B731C10BCA300CC117A /* 23477873225_c4ddf1eb7e_m.jpg */; };
 		5362DF3A1C0F564400585145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5362DF391C0F564400585145 /* AppDelegate.swift */; };
 		5362DF3F1C0F564400585145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5362DF3D1C0F564400585145 /* Main.storyboard */; };
 		5362DF421C0F564400585145 /* GastrofixCodeChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5362DF401C0F564400585145 /* GastrofixCodeChallenge.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		535D8B731C10BCA300CC117A /* 23477873225_c4ddf1eb7e_m.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23477873225_c4ddf1eb7e_m.jpg; sourceTree = "<group>"; };
 		5362DF361C0F564400585145 /* GastrofixCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GastrofixCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5362DF391C0F564400585145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5362DF3E1C0F564400585145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		5362DF721C0F82BB00585145 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				535D8B731C10BCA300CC117A /* 23477873225_c4ddf1eb7e_m.jpg */,
 				5362DF731C0F82CB00585145 /* Router.swift */,
 				5362DF751C0FB59A00585145 /* PersistencyManager.swift */,
 				5362DF771C0FB62300585145 /* GastrofixAPI.swift */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5362DF471C0F564400585145 /* LaunchScreen.storyboard in Resources */,
+				535D8B741C10BCA300CC117A /* 23477873225_c4ddf1eb7e_m.jpg in Resources */,
 				5362DF441C0F564400585145 /* Assets.xcassets in Resources */,
 				5362DF3F1C0F564400585145 /* Main.storyboard in Resources */,
 			);

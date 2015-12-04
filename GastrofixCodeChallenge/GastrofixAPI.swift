@@ -28,4 +28,8 @@ class GastrofixAPI: NSObject {
     func saveFlickrPhoto(tags: String, authorId: String, author: String, published: NSDate, itemDescription: String, dateTaken: NSDate, media: String, link: String, title: String) {
         persistencyManager.saveFlickrPhoto(tags, authorId: authorId, author: author, published: published, itemDescription: itemDescription, dateTaken: dateTaken, media: media, link: link, title: title)
     }
+    
+    func checkIfFlickrPhotoExists(media: String) -> Int {
+        return persistencyManager.checkIfFlickrPhotoExists(media)
+    }
 }

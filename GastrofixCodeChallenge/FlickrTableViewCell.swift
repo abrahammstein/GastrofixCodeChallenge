@@ -12,6 +12,7 @@ class FlickrTableViewCell: UITableViewCell {
     
     @IBOutlet weak var flickrImage: UIImageView!
     @IBOutlet weak var flickrTitle: UILabel!
+    @IBOutlet weak var publishedLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

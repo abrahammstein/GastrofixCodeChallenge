@@ -23,7 +23,7 @@ enum Router: URLRequestConvertible {
     var path: String {
         switch self {
         case .GetFlickrPhotos:
-            return "/services/feeds/photos_public.gne?tags=soccer&format=json&jsoncallback="
+            return "/services/feeds/photos_public.gne?tags=soccer&format=json&jsoncallback=?"
         }
     }
     
