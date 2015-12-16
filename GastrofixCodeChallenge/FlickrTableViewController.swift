@@ -64,20 +64,18 @@ class FlickrTableViewController: UITableViewController {
         
         let session = NSURLSession(configuration: sessionConfig)
         session.dataTaskWithURL(NSURL(string: "http://www.flickr.com/services/feeds/photos_public.gne?tags=soccer&format=json&jsoncallback=?")!) { (data, response, error) -> Void in
-            print("JSON RESPONSE IS: \(response)")
             let httpResponse = response as! NSHTTPURLResponse
             if httpResponse.statusCode == 200 {
                 var dataString = String(data: data!, encoding: NSUTF8StringEncoding)
                 dataString!.removeAtIndex(dataString!.characters.indices.first!)
                 dataString!.removeAtIndex(dataString!.characters.indices.last!)
-                print("The Data String is: \(dataString!)")
+                dataString = dataString!.stringByReplacingOccurrencesOfString("\\'", withString: "")
                 let utfData = dataString?.dataUsingEncoding(NSUTF8StringEncoding)
                 let gastrofixApi = GastrofixAPI.sharedInstance
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
                     do {
                         let photosJson = try NSJSONSerialization.JSONObjectWithData(utfData!, options: .AllowFragments) as! [String: AnyObject]
-                        print("Photos Json has: \(photosJson)")
                         if let items = photosJson["items"] as? [NSDictionary] {
                             for item in items {
                                 let tags = item["tags"] as! String
